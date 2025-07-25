@@ -1,7 +1,9 @@
+package ir.mojir.crud_generator;
+
 public class CrudGenerator {
 
-    public void createSources(String basePackage) {
-
+    public static void createSources(String basePackage) {
+        
 
     }
 
