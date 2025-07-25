@@ -6,4 +6,9 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - crud-api-generator</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
 </project>
