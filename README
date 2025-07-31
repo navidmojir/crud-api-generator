@@ -1,0 +1,11 @@
+For Java project:
+1- generate project with start.spring.io
+2- add pom_dependencies.txt to project's pom.xml
+3- copy files
+4- to store h2 db as file:
+	spring.datasource.url=jdbc:h2:file:./data
+	spring.jpa.hibernate.ddl-auto=update
+
+For WUI:
+1- ng new wui
+2- copy files

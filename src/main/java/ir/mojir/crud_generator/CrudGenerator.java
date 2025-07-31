@@ -5,61 +5,53 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class CrudGenerator {
 
-    private static String entityName = "Ticket";
-    private static String entityNameCamel = "ticket";
+    private static Config config = new Config();
 
-    private static String packageName = "ir.mojir.simple_ticketing_system";
-
-    private final static String outputDir = "./output/";
+    
     public static void main(String[] args) {
         try {
-            createSources("test");
+            createSources();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void createSources(String basePackage) throws URISyntaxException, IOException {
+    public static void createSources() throws URISyntaxException, IOException {
         URL url = CrudGenerator.class.getClassLoader().getResource("templatefiles");
 
         File templateFilesDir = Paths.get(url.toURI()).toFile();
 
         replaceAndCopy(templateFilesDir, "");
 
-//        for(File file: templateFilesDir.listFiles()) {
-//            System.out.println(file.getName());
-//        }
-
     }
 
-    private static void replaceAndCopy(File file, String parentDir) throws IOException {
+
+	private static void replaceAndCopy(File file, String parentDir) throws IOException {
 
         if(file.isDirectory()) {
+        	System.out.println("DIR:"+file.getName());
             String dirName = file.getName();
-            dirName = dirName.replaceAll("xxx", entityNameCamel);
+            dirName = dirName.replaceAll("xxx", config.getEntityNameCamel());
             String path = parentDir + "/" + dirName;
             for(File subDir: file.listFiles()) {
-//                System.out.println(path);
-                Files.createDirectories(Paths.get(outputDir + path));
+                Files.createDirectories(Paths.get(config.getOutputDir() + path));
                 replaceAndCopy(subDir, path);
             }
-//
-
         }
         else {
-//            System.out.println(parentDir + "/" + file.getName());
+        	System.out.println("FILE:"+file.getName());
             String fileContent = Files.readString(file.toPath());
-            fileContent = fileContent.replaceAll("Xxx", entityName);
-            fileContent =  fileContent.replaceAll("xxx", entityNameCamel);
-            fileContent = fileContent.replaceAll("com.example.demo", packageName);
+            fileContent = fileContent.replaceAll("Xxx", config.getEntityName());
+            fileContent =  fileContent.replaceAll("xxx", config.getEntityNameCamel());
+            fileContent =  fileContent.replaceAll("xxxFa", config.getEntityPersianName());
+            fileContent = fileContent.replaceAll("com.example.demo", config.getPackageName());
             String fileName = file.getName();
-            fileName = fileName.replaceAll("Xxx", entityName);
-            Files.writeString(Paths.get(outputDir + parentDir + "/" + fileName), fileContent);
+            fileName = fileName.replaceAll("Xxx", config.getEntityName());
+            Files.writeString(Paths.get(config.getOutputDir() + parentDir + "/" + fileName), fileContent);
         }
     }
 
