@@ -1,4 +1,4 @@
-package ir.mojir.simple_ticketing_system.dtos.ticket;
+package com.example.demo.dtos.ticket;
 
 public class SearchTicketRespRow {
     private long id;

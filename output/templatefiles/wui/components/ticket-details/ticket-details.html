@@ -7,7 +7,7 @@
 <form [formGroup]="form">
     <mat-form-field>
         <mat-label>نام</mat-label>
-        <input type="name" formControlName="name" matInput maxlength="255"></input>
+        <input type="name" formControlName="name" matInput maxlength="255">
         <mat-error *ngIf="name.invalid && name.errors?.['pattern']">{{patternErrorMsg}}</mat-error>
     </mat-form-field>
 </form>

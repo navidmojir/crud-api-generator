@@ -1,4 +1,4 @@
-package ir.mojir.simple_ticketing_system.dtos.ticket;
+package com.example.demo.dtos.ticket;
 
 import ir.mojir.spring_boot_commons.helpers.RegexHelper;
 import jakarta.validation.constraints.Pattern;

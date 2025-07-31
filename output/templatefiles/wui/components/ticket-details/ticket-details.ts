@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageMode } from '../enums/page-mode';
+import { PageMode } from '../../enums/page-mode';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import { CommonModule, Location } from '@angular/common';
@@ -7,7 +7,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatError, MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
-import { TicketService } from '../services/ticket-service';
+import { TicketService } from '../../services/ticket-service';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'my-angular-commons2';
 import { BrowserModule } from '@angular/platform-browser';
@@ -76,7 +76,7 @@ export class TicketDetails implements OnInit {
 
   save() {
     this.ticketService.update(this.ticket.id, this.form.value).subscribe(
-      (result) => {
+      (result: any) => {
         this.ticket = result;
         this.pageMode = PageMode.VIEW;
         this.form.disable();
@@ -93,7 +93,7 @@ export class TicketDetails implements OnInit {
     if(this.form.touched) {
       let dialogRef = this.dialog.open(ConfirmationDialogComponent);
       dialogRef.componentInstance.confirmMessage = "محتوای فرم تغییر کرده است. آیا از عدم ذخیره اطلاعات اطمینان دارید؟";
-      dialogRef.afterClosed().subscribe((result) => {
+      dialogRef.afterClosed().subscribe((result: boolean) => {
         if(result)
           this.cancelEditModeLogic();
       })

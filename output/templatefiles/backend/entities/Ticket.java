@@ -1,4 +1,4 @@
-package ir.mojir.simple_ticketing_system.entities;
+package com.example.demo.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

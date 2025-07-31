@@ -1,4 +1,4 @@
-package ir.mojir.simple_ticketing_system.rest_controllers;
+package com.example.demo.rest_controllers;
 
 public class TicketSearchFilter {
     private long id;

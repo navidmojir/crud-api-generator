@@ -1,4 +1,4 @@
-package ir.mojir.simple_ticketing_system.exception_mappers;
+package com.example.demo.exception_mappers;
 
 import ir.mojir.spring_boot_commons.dtos.ErrorDto;
 import ir.mojir.spring_boot_commons.enums.ErrorEnum;

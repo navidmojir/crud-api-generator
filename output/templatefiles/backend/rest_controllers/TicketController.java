@@ -1,8 +1,8 @@
-package ir.mojir.simple_ticketing_system.rest_controllers;
+package com.example.demo.rest_controllers;
 
-import ir.mojir.simple_ticketing_system.dtos.ticket.*;
-import ir.mojir.simple_ticketing_system.entities.Ticket;
-import ir.mojir.simple_ticketing_system.services.TicketService;
+import com.example.demo.dtos.ticket.*;
+import com.example.demo.entities.Ticket;
+import com.example.demo.services.TicketService;
 import ir.mojir.spring_boot_commons.dtos.SearchDto;
 import ir.mojir.spring_boot_commons.helpers.PersianCharNormalizer;
 import jakarta.validation.Valid;

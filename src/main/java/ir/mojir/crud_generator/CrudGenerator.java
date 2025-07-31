@@ -51,6 +51,7 @@ public class CrudGenerator {
             fileContent = fileContent.replaceAll("com.example.demo", config.getPackageName());
             String fileName = file.getName();
             fileName = fileName.replaceAll("Xxx", config.getEntityName());
+            fileName = fileName.replaceAll("xxx", config.getEntityNameCamel());
             Files.writeString(Paths.get(config.getOutputDir() + parentDir + "/" + fileName), fileContent);
         }
     }

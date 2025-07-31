@@ -1,0 +1,15 @@
+{
+        path: 'xxxs',
+        component: Xxxs
+    },
+    {
+        path: 'xxx-details',
+        component: XxxDetails
+    },
+    {
+        path: 'xxx-details/:id',
+        component: XxxDetails
+    }
+
+import { XxxDetails } from './components/xxx-details/xxx-details';
+import { Xxxs } from './components/xxxs/xxxs';

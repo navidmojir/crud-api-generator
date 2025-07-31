@@ -1,0 +1,15 @@
+{
+        path: 'tickets',
+        component: Tickets
+    },
+    {
+        path: 'ticket-details',
+        component: TicketDetails
+    },
+    {
+        path: 'ticket-details/:id',
+        component: TicketDetails
+    }
+
+import { TicketDetails } from './components/ticket-details/ticket-details';
+import { Tickets } from './components/tickets/tickets';
