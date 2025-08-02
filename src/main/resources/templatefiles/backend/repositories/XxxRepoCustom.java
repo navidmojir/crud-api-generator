@@ -1,7 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.demo.entities.Xxx;
-import com.example.demo.rest_controllers.XxxSearchFilter;
+import com.example.demo.dtos.xxx.XxxSearchFilter;
 import ir.mojir.spring_boot_commons.dtos.SearchDto;
 import ir.mojir.spring_boot_commons.helpers.RepositoryHelper;
 import ir.mojir.spring_boot_commons.helpers.Validations;

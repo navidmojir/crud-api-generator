@@ -1,4 +1,4 @@
-package com.example.demo.rest_controllers;
+package com.example.demo.dtos.xxx;
 
 public class XxxSearchFilter {
     private long id;

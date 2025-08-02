@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/xxxs")
+@CrossOrigin(exposedHeaders = "X-Total-Count")
 public class XxxController {
 
     @Autowired
