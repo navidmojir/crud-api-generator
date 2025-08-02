@@ -27,3 +27,5 @@ For WUI:
 5- add routes in app.routes.ts from needed-routes.txt
 6- copy styles.css
 7- copy assets beside app folder
+8- add dir="rtl" in body (index.html)
+9- in angular.json -> "projects.project-name.architect.build.options.preserveSymlinks": true
