@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Vazir;
+    src: url('assets/fonts/Vazir.eot');
+    src: url('assets/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/Vazir.woff') format('woff'),
+    url('assets/fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url( 'assets/fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url('assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+      url('assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+      url('assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+  }
+
+  html, body { height: 100%; }
+body { 
+    margin: 0;  
+    /* background-color: #1c1c1c; */
+    background-image: linear-gradient(90deg, #e2e2e2 , #f3f3f3);
+    /* background-image: url("assets/images/cbilogo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    
+}
+
+*, h2, h3, .mat-dialog-title, .mat-typography h3, .mat-tooltip, .mat-menu-item{
+    font-family: Vazir, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 15px!important;
+}
+
+.mat-input-element {
+    font-family: Vazir !important;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+.container {
+    width:90%;
+    margin: 0 auto;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -25,3 +25,5 @@ For WUI:
         npm link my-angular-commons2
 4- ng add @angular/material
 5- add routes in app.routes.ts from needed-routes.txt
+6- copy styles.css
+7- copy assets beside app folder

@@ -45,9 +45,9 @@ public class CrudGenerator {
         else {
         	System.out.println("FILE:"+file.getName());
             String fileContent = Files.readString(file.toPath());
+            fileContent =  fileContent.replaceAll("xxxFa", config.getEntityPersianName());
             fileContent = fileContent.replaceAll("Xxx", config.getEntityName());
             fileContent =  fileContent.replaceAll("xxx", config.getEntityNameCamel());
-            fileContent =  fileContent.replaceAll("xxxFa", config.getEntityPersianName());
             fileContent = fileContent.replaceAll("com.example.demo", config.getPackageName());
             String fileName = file.getName();
             fileName = fileName.replaceAll("Xxx", config.getEntityName());
