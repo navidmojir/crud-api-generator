@@ -1,7 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.demo.entities.Ticket;
-import com.example.demo.rest_controllers.TicketSearchFilter;
+import com.example.demo.dtos.ticket.TicketSearchFilter;
 import ir.mojir.spring_boot_commons.dtos.SearchDto;
 import ir.mojir.spring_boot_commons.helpers.RepositoryHelper;
 import ir.mojir.spring_boot_commons.helpers.Validations;

@@ -46,7 +46,7 @@ export class Tickets {
     this.gridParams.fieldConfigs.push(textCol);
 
     let createAction = new CustomAction();
-    createAction.title = "ایجاد ticketFa جدید";
+    createAction.title = "ایجاد تیکت جدید";
     createAction.onClick = () => this.router.navigate(["ticket-details"]);
     this.gridParams.customGeneralActions.push(createAction);
 

@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/tickets")
+@CrossOrigin(origins="*", exposedHeaders = "X-Total-Count")
 public class TicketController {
 
     @Autowired
