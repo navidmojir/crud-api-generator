@@ -1,14 +1,17 @@
 {
         path: 'xxxs',
-        component: Xxxs
+        component: Xxxs,
+		canActivate: [AuthGuard]
     },
     {
         path: 'xxx-details',
-        component: XxxDetails
+        component: XxxDetails,
+		canActivate: [AuthGuard]
     },
     {
         path: 'xxx-details/:id',
-        component: XxxDetails
+        component: XxxDetails,
+		canActivate: [AuthGuard]
     }
 
 import { XxxDetails } from './components/xxx-details/xxx-details';
