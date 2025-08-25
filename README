@@ -9,9 +9,16 @@ For Java project:
     		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     		return modelMapper;
     	}
-5- to store h2 db as file:
+5- add component scan:
+    @ComponentScan(basePackages = "com.example.demo, ir.mojir.my_kc_auth_client")
+6- application.properties:
+    server.port=8081
 	spring.datasource.url=jdbc:h2:file:./data
 	spring.jpa.hibernate.ddl-auto=update
+	spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/realms/cbi
+	kc.clientId=demo
+    kc.clientSecret=KgwiCz9l6q9JUiNE0o2IoT9GwB2l54VJ
+
 
 For WUI:
 1- ng new demo-wui
@@ -29,3 +36,12 @@ For WUI:
 7- copy assets beside app folder
 8- add dir="rtl" in body (index.html)
 9- in angular.json -> "projects.project-name.architect.build.options.preserveSymlinks": true
+10- ng g environments - then add following config:
+    export const environment = {
+        keycloak: {
+            url: "http://localhost:8080",
+            realm: "cbi",
+            clientId: "demo-wui"
+        }
+    };
+11- npm install keycloak-js

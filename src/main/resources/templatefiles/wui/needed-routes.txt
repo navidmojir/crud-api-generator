@@ -16,3 +16,4 @@
 
 import { XxxDetails } from './components/xxx-details/xxx-details';
 import { Xxxs } from './components/xxxs/xxxs';
+import { AuthGuard } from 'my-angular-commons2';

@@ -5,7 +5,7 @@ import com.example.demo.dtos.xxx.UpdateXxxReq;
 import com.example.demo.entities.Xxx;
 import com.example.demo.repositories.XxxRepo;
 import com.example.demo.repositories.XxxRepoCustom;
-import com.example.demo.rest_controllers.XxxSearchFilter;
+import com.example.demo.dtos.xxx.XxxSearchFilter;
 import ir.mojir.spring_boot_commons.dtos.SearchDto;
 import ir.mojir.spring_boot_commons.exceptions.EntityNotFoundException;
 import jakarta.transaction.Transactional;
