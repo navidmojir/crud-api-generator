@@ -1,4 +1,1 @@
-Filter not works
-Check permissions and load UI by permissions
-Enhance WUI
 Complete Test

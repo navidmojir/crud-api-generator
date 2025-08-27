@@ -1,13 +1,15 @@
-<button mat-raised-button color="accent" (click)="backToList()" *ngIf="pageMode == PageMode.CREATE || pageMode == PageMode.VIEW">بازگشت</button>
-<button mat-raised-button color="accent" (click)="create()" *ngIf="pageMode == PageMode.CREATE">ثبت</button>
-<button mat-raised-button color="accent" (click)="cancelEditMode()" *ngIf="pageMode == PageMode.UPDATE">انصراف</button>
-<button mat-raised-button color="accent" (click)="save()" *ngIf="pageMode == PageMode.UPDATE">ذخیره</button>
-<button mat-raised-button color="accent" (click)="switchToEditMode()" *ngIf="pageMode == PageMode.VIEW">ویرایش</button>
-<button mat-raised-button color="accent" (click)="remove()" *ngIf="pageMode == PageMode.VIEW">حذف</button>
-<form [formGroup]="form">
-    <mat-form-field>
-        <mat-label>نام</mat-label>
-        <input type="name" formControlName="name" matInput maxlength="255">
-        <mat-error *ngIf="name.invalid && name.errors?.['pattern']">{{patternErrorMsg}}</mat-error>
-    </mat-form-field>
-</form>
+<div class="details-panel">
+    <button mat-raised-button color="accent" (click)="backToList()" *ngIf="pageMode == PageMode.CREATE || pageMode == PageMode.VIEW">بازگشت</button>
+    <button mat-raised-button color="accent" (click)="create()" *ngIf="pageMode == PageMode.CREATE">ثبت</button>
+    <button mat-raised-button color="accent" (click)="cancelEditMode()" *ngIf="pageMode == PageMode.UPDATE">انصراف</button>
+    <button mat-raised-button color="accent" (click)="save()" *ngIf="pageMode == PageMode.UPDATE">ذخیره</button>
+    <button mat-raised-button color="accent" (click)="switchToEditMode()" *ngIf="authService.hasPermission('/xxxs/{id}', 'PUT') && pageMode == PageMode.VIEW">ویرایش</button>
+    <button mat-raised-button color="accent" (click)="remove()" *ngIf="authService.hasPermission('/xxxs/{id}', 'DELETE') && pageMode == PageMode.VIEW">حذف</button>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-label>نام</mat-label>
+            <input type="name" formControlName="name" matInput maxlength="255">
+            <mat-error *ngIf="name.invalid && name.errors?.['pattern']">{{patternErrorMsg}}</mat-error>
+        </mat-form-field>
+    </form>
+</div>

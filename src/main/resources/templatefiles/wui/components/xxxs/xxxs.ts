@@ -6,7 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-import { MyGridComponent, CrudParams, FieldConfig, CustomAction, ConfirmationDialogComponent, FilterConfig} from 'my-angular-commons2';
+import { MyGridComponent, CrudParams, FieldConfig, CustomAction, ConfirmationDialogComponent, FilterConfig, AuthService} from 'my-angular-commons2';
 
 
 @Component({
@@ -22,7 +22,8 @@ export class Xxxs {
 
   @ViewChild(MyGridComponent) grid!: MyGridComponent;
 
-  constructor(private router: Router
+  constructor(private router: Router,
+     private authService: AuthService
   ) {
   }
 
@@ -45,15 +46,19 @@ export class Xxxs {
     textCol.displayText = 'نام';
     this.gridParams.fieldConfigs.push(textCol);
 
-    let createAction = new CustomAction();
-    createAction.title = "ایجاد xxxFa جدید";
-    createAction.onClick = () => this.router.navigate(["xxx-details"]);
-    this.gridParams.customGeneralActions.push(createAction);
+    if(this.authService.hasPermission("/xxxs", "POST")) {
+      let createAction = new CustomAction();
+      createAction.title = "ایجاد xxxFa جدید";
+      createAction.onClick = () => this.router.navigate(["xxx-details"]);
+      this.gridParams.customGeneralActions.push(createAction);
+    }
 
-    let showDetailsAction = new CustomAction();
-    showDetailsAction.title = 'جزئیات';
-    showDetailsAction.onClick = (xxx: any) => this.router.navigate(['xxx-details', xxx.id]);
-    this.gridParams.customRecordActions.push(showDetailsAction);
+    if(this.authService.hasPermission("/xxxs/{id}", "GET")) {
+      let showDetailsAction = new CustomAction();
+      showDetailsAction.title = 'جزئیات';
+      showDetailsAction.onClick = (xxx: any) => this.router.navigate(['xxx-details', xxx.id]);
+      this.gridParams.customRecordActions.push(showDetailsAction);
+    }
     
     this.makeFilterConfig();
   }

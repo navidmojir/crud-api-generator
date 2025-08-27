@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { XxxService } from '../../services/xxx-service';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from 'my-angular-commons2';
+import { ConfirmationDialogComponent, AuthService} from 'my-angular-commons2';
 import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
@@ -35,7 +35,8 @@ export class XxxDetails implements OnInit {
     private xxxService: XxxService,
     public location: Location,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public authService: AuthService
   ){
   }
 
@@ -90,7 +91,7 @@ export class XxxDetails implements OnInit {
   }
 
   cancelEditMode() {
-    if(this.form.touched) {
+    if(this.form.dirty) {
       let dialogRef = this.dialog.open(ConfirmationDialogComponent);
       dialogRef.componentInstance.confirmMessage = "محتوای فرم تغییر کرده است. آیا از عدم ذخیره اطلاعات اطمینان دارید؟";
       dialogRef.afterClosed().subscribe((result: boolean) => {
