@@ -73,6 +73,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .details-panel {
-    background-color: #fff;
+    background-color: #faf9fd;
     padding: 0 10px 10px 10px;
 }
