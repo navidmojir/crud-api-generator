@@ -41,7 +41,8 @@ For WUI:
         keycloak: {
             url: "http://localhost:8080",
             realm: "cbi",
-            clientId: "demo-wui"
+            clientId: "demo-wui",
+            resourceServersClientIds: ["demo"]
         }
     };
 11- npm install keycloak-js
