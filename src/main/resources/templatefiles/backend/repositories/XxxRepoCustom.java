@@ -48,6 +48,9 @@ public class XxxRepoCustom {
         XxxSearchFilter filters = req.getFilters();
         if(filters != null)
         {
+            if(filters.getId() != 0)
+                predicates.add(cb.equal(root.get("id"), filters.getId()));
+
             if(!Validations.isBlank(filters.getName()))
                 predicates.add(cb.like(root.get("name"), "%" + filters.getName().trim() + "%"));
         }
